@@ -67,12 +67,29 @@ public class ProductBasket {
             }
         }
     }
-}
 
 
-//
-//Метод, проверяющий продукт в корзине по имени: метод принимает в себя строку
+    //Метод, проверяющий продукт в корзине по имени: метод принимает в себя строку
 // имени и возвращает boolean в зависимости от того, есть продукт в корзине или его нет.
+    public static Boolean checkingProductInBasketNamed(String name) {
+        for (int i = 0; i < repositoryProduct.length; i++) {
+            System.out.println("1111");
+            if (repositoryProduct[i] != null) {
+                Product productArry = repositoryProduct[i];
+                String produxtName = productArry.getName();
+                if (produxtName.equals(name)) {
+                    System.out.println("Есть такое имя -" + name);
+                    return true;
+                } else {
+                    System.out.println("Нет  такого имени -" + name);
+
+                }
+                return false;
+            }
+        }
+        return null;
+    }
+
 //Метод очистки корзины: метод ничего не принимает и очищает массив,
 // проставляя всем его элементам null
 //.
@@ -81,5 +98,5 @@ public class ProductBasket {
 //В качестве хранилища для объектов product используйте массив из пяти элементов, однако прямой доступ к этому массиву должен быть невозможен.
 //Если в массиве не хватает места на следующий продукт, то метод добавления продукта должен выводить в консоль сообщение вида: «Невозможно добавить продукт».
 
-
+}
 

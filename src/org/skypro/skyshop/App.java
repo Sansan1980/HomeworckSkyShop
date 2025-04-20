@@ -20,6 +20,7 @@ public class App {
         ProductBasket.summationTheTotalPraiceTheBasket();
         ProductBasket.printPraiceBasket();
         System.out.println(Arrays.toString(getRepositoryProduct()));
+        ProductBasket.checkingProductInBasketNamed("Машина");
     }
 
 }
