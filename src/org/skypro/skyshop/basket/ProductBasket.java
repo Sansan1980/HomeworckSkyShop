@@ -2,10 +2,20 @@ package org.skypro.skyshop.basket;
 
 import org.skypro.skyshop.product.Product;
 
+import java.util.Arrays;
+
 public class ProductBasket {
     private static int count = 0;
     // private ArrayList <Product> RepositoryProduct = new ArrayList<>(5);
     private static Product[] repositoryProduct = new Product[5];
+
+    public void setRepositoryProduct(Product[] repositoryProduct) {
+        this.repositoryProduct = repositoryProduct;
+    }
+
+    public static Product[] getRepositoryProduct() {
+        return repositoryProduct;
+    }
 
 
 //    Метод добавления продукта в корзину: метод принимает в себя продукт и ничего не возвращает.
@@ -19,8 +29,12 @@ public class ProductBasket {
             System.out.println("Добавлен новый продукт - " + product);
         }
     }
-//Метод получения общей стоимости корзины: метод ничего не принимает и возвращает целое число.
 
+    /**
+     * Метод получения общей стоимости корзины: метод ничего не принимает .
+     *
+     * @return и возвращает целое число - сумму товаров всей корзины.
+     */
     public static Integer summationTheTotalPraiceTheBasket() {
         Integer priceResult = 0;
         for (int i = 0; i < repositoryProduct.length; i++) {
@@ -29,25 +43,19 @@ public class ProductBasket {
                 priceResult += productResult.getPrice();
             }
         }
-        System.out.println("Общая стоимости корзины: " + priceResult);
+        System.out.println("Итого: Общая стоимости корзины: " + priceResult);
         return priceResult;
     }
 
-    public void setRepositoryProduct(Product[] repositoryProduct) {
-        this.repositoryProduct = repositoryProduct;
-    }
+    /**
+     * Метод, который печатает содержимое корзины: метод ничего не принимает и не возвращает, но печатает в консоль сообщение вида:
+     * <имя продукта>: <стоимость>
+     * <имя продукта>: <стоимость>
+     * <имя продукта>: <стоимость>
+     * Итого: <общая стоимость корзины>
+     * Если в корзине ничего нет, нужно напечатать фразу «в корзине пусто».
+     */
 
-    public static Product[] getRepositoryProduct() {
-        return repositoryProduct;
-    }
-
-
-    //Метод, который печатает содержимое корзины: метод ничего не принимает и не возвращает, но печатает в консоль сообщение вида:
-//<имя продукта>: <стоимость>
-//<имя продукта>: <стоимость>
-//<имя продукта>: <стоимость>
-//Итого: <общая стоимость корзины>
-//Если в корзине ничего нет, нужно напечатать фразу «в корзине пусто».
     public static void printPraiceBasket() {
         int indexСounter = 0;
         if (indexСounter <= repositoryProduct.length) {
@@ -68,35 +76,46 @@ public class ProductBasket {
         }
     }
 
-
-    //Метод, проверяющий продукт в корзине по имени: метод принимает в себя строку
-// имени и возвращает boolean в зависимости от того, есть продукт в корзине или его нет.
-    public static Boolean checkingProductInBasketNamed(String name) {
-        for (int i = 0; i < repositoryProduct.length; i++) {
-            System.out.println("1111");
-            if (repositoryProduct[i] != null) {
-                Product productArry = repositoryProduct[i];
-                String produxtName = productArry.getName();
-                if (produxtName.equals(name)) {
-                    System.out.println("Есть такое имя -" + name);
-                    return true;
-                } else {
-                    System.out.println("Нет  такого имени -" + name);
-
-                }
-                return false;
+    /**
+     * Проверяет наличие товара с указанным именем в корзине
+     *
+     * @param name Имя товара для поиска
+     * @return true если товар найден, false если не найден или корзина пуста
+     */
+    public static boolean checkingProductInBasketNamed(String name) {
+        if (repositoryProduct == null) {
+            System.out.println("Корзина пуста");
+            return false;
+        }
+        for (Product product : repositoryProduct) {
+            if (product == null) continue;
+            String productName = product.getName();
+            if (productName != null && productName.equals(name)) {
+                System.out.println("Товар с именем - " + name + ", найден");
+                return true;
             }
         }
-        return null;
+        System.out.println("Товар с именем '" + name + "' не найден");
+        return false;
+
     }
 
-//Метод очистки корзины: метод ничего не принимает и очищает массив,
-// проставляя всем его элементам null
-//.
-//Обратите внимание!
-//
-//В качестве хранилища для объектов product используйте массив из пяти элементов, однако прямой доступ к этому массиву должен быть невозможен.
-//Если в массиве не хватает места на следующий продукт, то метод добавления продукта должен выводить в консоль сообщение вида: «Невозможно добавить продукт».
+
+    /**
+     * Очищает корзину продуктов, устанавливая всем элементам массива {@code null}.
+     * Если корзина не была инициализирована (массив равен {@code null}), метод ничего не делает.
+     */
+    public static void cleaningTheBasket() {
+        for (int i = 0; i < repositoryProduct.length; i++) {
+            if (repositoryProduct == null) {
+                return;
+            }
+            repositoryProduct[i] = null;
+           // Arrays.fill(repositoryProduct, null);
+        }
+    }
 
 }
+
+
 
