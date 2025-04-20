@@ -52,10 +52,8 @@ public class ProductBasket {
         int indexСounter = 0;
         if (indexСounter <= repositoryProduct.length) {
             if (repositoryProduct[indexСounter] != null) {
-                System.out.println("indexСounter -" + indexСounter);
                 for (int i = 0; i < repositoryProduct.length; i++) {
                     indexСounter++;
-                    System.out.println(indexСounter);
                     if (repositoryProduct[i] != null) {
                         Product productnew = repositoryProduct[i];
                         System.out.print("Имя продукта =" + productnew.getName());
@@ -73,11 +71,10 @@ public class ProductBasket {
 
 
 //
-//Метод, проверяющий продукт в корзине по имени: метод принимает в себя строку имени и возвращает
-//boolean
-// в зависимости от того, есть продукт в корзине или его нет.
-//Метод очистки корзины: метод ничего не принимает и очищает массив, проставляя всем его элементам
-//null
+//Метод, проверяющий продукт в корзине по имени: метод принимает в себя строку
+// имени и возвращает boolean в зависимости от того, есть продукт в корзине или его нет.
+//Метод очистки корзины: метод ничего не принимает и очищает массив,
+// проставляя всем его элементам null
 //.
 //Обратите внимание!
 //
