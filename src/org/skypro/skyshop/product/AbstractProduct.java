@@ -36,7 +36,9 @@ public class AbstractProduct extends Product{
     @Override
     public String toString() {
         return "AbstractProduct{" +
-                "price=" + price +
+                "name=" + getName() +
+                ": price=" + price +
                 '}';
     }
+
 }

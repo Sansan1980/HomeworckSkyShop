@@ -5,14 +5,14 @@ import org.skypro.skyshop.product.Product;
 import java.util.Arrays;
 
 public class ProductBasket {
-    private static int count = 0;
-    private static Product[] repositoryProduct = new Product[5];
+    private  int count = 0;
+    private  Product[] repositoryProduct = new Product[5];
 
     public void setRepositoryProduct(Product[] repositoryProduct) {
         this.repositoryProduct = repositoryProduct;
     }
 
-    public static Product[] getRepositoryProduct() {
+    public  Product[] getRepositoryProduct() {
         return repositoryProduct;
     }
 
@@ -21,7 +21,7 @@ public class ProductBasket {
      *
      * @param product Добавленный Товар в корзину класса Product
      */
-    public static void addProduct(Product product) {
+    public  void addProduct(Product product) {
         if (count >= 5) {
             System.out.println(" Невозможно добавить продукт");
         } else {
@@ -36,8 +36,8 @@ public class ProductBasket {
      *
      * @return и возвращает целое число - сумму товаров всей корзины.
      */
-    public static Integer summationTheTotalPraiceTheBasket() {
-        Integer priceResult = 0;
+    public  Double summationTheTotalPraiceTheBasket() {
+        Double priceResult = 0.0;
         for (int i = 0; i < repositoryProduct.length; i++) {
             if (repositoryProduct[i] != null) {
                 Product productResult = repositoryProduct[i];
@@ -57,7 +57,7 @@ public class ProductBasket {
      * Если в корзине ничего нет, нужно напечатать фразу «в корзине пусто».
      */
 
-    public static void printPraiceBasket() {
+    public  void printPraiceBasket() {
         int indexСounter = 0;
         if (indexСounter <= repositoryProduct.length) {
             if (repositoryProduct[indexСounter] != null) {
@@ -85,7 +85,7 @@ public class ProductBasket {
      */
 
 
-    public static boolean checkingProductInBasketNamed(String name) {
+    public  boolean checkingProductInBasketNamed(String name) {
         if (repositoryProduct == null) {
             System.out.println("Корзина пуста");
             return false;
@@ -108,7 +108,7 @@ public class ProductBasket {
      * Очищает корзину продуктов, устанавливая всем элементам массива {@code null}.
      * Если корзина не была инициализирована (массив равен {@code null}), метод ничего не делает.
      */
-    public static void cleaningTheBasket() {
+    public  void cleaningTheBasket() {
         if (repositoryProduct == null) {
             return;
         }
