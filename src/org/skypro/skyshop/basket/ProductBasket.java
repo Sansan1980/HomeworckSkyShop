@@ -6,7 +6,6 @@ import java.util.Arrays;
 
 public class ProductBasket {
     private static int count = 0;
-    // private ArrayList <Product> RepositoryProduct = new ArrayList<>(5);
     private static Product[] repositoryProduct = new Product[5];
 
     public void setRepositoryProduct(Product[] repositoryProduct) {
@@ -17,9 +16,11 @@ public class ProductBasket {
         return repositoryProduct;
     }
 
-
-//    Метод добавления продукта в корзину: метод принимает в себя продукт и ничего не возвращает.
-
+    /**
+     * Метод добавления продукта в корзину: метод принимает в себя продукт и ничего не возвращает.
+     *
+     * @param product Добавленный Товар в корзину класса Product
+     */
     public static void addProduct(Product product) {
         if (count >= 5) {
             System.out.println(" Невозможно добавить продукт");
@@ -82,6 +83,8 @@ public class ProductBasket {
      * @param name Имя товара для поиска
      * @return true если товар найден, false если не найден или корзина пуста
      */
+
+
     public static boolean checkingProductInBasketNamed(String name) {
         if (repositoryProduct == null) {
             System.out.println("Корзина пуста");
@@ -106,14 +109,12 @@ public class ProductBasket {
      * Если корзина не была инициализирована (массив равен {@code null}), метод ничего не делает.
      */
     public static void cleaningTheBasket() {
-        for (int i = 0; i < repositoryProduct.length; i++) {
-            if (repositoryProduct == null) {
-                return;
-            }
-            repositoryProduct[i] = null;
-           // Arrays.fill(repositoryProduct, null);
+        if (repositoryProduct == null) {
+            return;
         }
+        Arrays.fill(repositoryProduct, null);
     }
+
 
 }
 
