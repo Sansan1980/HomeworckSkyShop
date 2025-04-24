@@ -2,11 +2,9 @@ package org.skypro.skyshop.basket;
 
 import org.skypro.skyshop.product.Product;
 
-import java.util.Arrays;
 
 public class ProductBasket {
     private  int count = 0;
-    // private ArrayList <Product> RepositoryProduct = new ArrayList<>(5);
     private  Product[] repositoryProduct = new Product[5];
 
     public  void setRepositoryProduct(Product[] repositoryProduct) {
@@ -20,6 +18,11 @@ public class ProductBasket {
 
 //    Метод добавления продукта в корзину: метод принимает в себя продукт и ничего не возвращает.
 
+    /**    Метод добавления продукта в корзину:
+     *  метод принимает  в себя продукт (параметр),проверяет по счетчику наличие свободных индексов
+     *  массива и по этому индексу ложит элемент и ничего не возвращает.
+     * @param product параметр приходящий в метод.
+     */
     public  void addProduct(Product product) {
         if (count >= 5) {
             System.out.println(" Невозможно добавить продукт");
