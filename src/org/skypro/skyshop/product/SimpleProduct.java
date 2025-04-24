@@ -10,9 +10,6 @@ public class SimpleProduct extends Product {
         this.price = price;
     }
 
-    public Double getPricew() {
-        return price;
-    }
 
     @Override
     public Double getPrice() {
@@ -21,6 +18,10 @@ public class SimpleProduct extends Product {
 
     public void setPrice(Double price) {
         this.price = price;
+    }
+    @Override
+    public  boolean isSpecial() {
+        return true;
     }
 
     @Override

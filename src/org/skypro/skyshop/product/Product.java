@@ -17,6 +17,10 @@ public  Product() {
 
     public abstract   Double getPrice();
 
+    public  boolean  isSpecial() {
+        return  true;
+    }
+
     @Override
     public String toString() {
         return "Product{" +

@@ -13,7 +13,12 @@ public class DiscountedProduct extends Product {
     }
 
     public Double getPrice() {
-        return basicPrice * percentageDiscount;
+        return basicPrice-(basicPrice * percentageDiscount);
+    }
+
+    @Override
+    public boolean isSpecial() {
+        return false;
     }
 
     public Double getBasicPrice() {
@@ -25,7 +30,7 @@ public class DiscountedProduct extends Product {
     }
 
     public Double getPercentageDiscount() {
-        return percentageDiscount;
+        return (basicPrice * percentageDiscount);
     }
 
     public void setPercentageDiscount(Double percentageDiscount) {
@@ -48,9 +53,9 @@ public class DiscountedProduct extends Product {
     @Override
     public String toString() {
         return "DiscountedProduct{" +
-                "name=" + getName() +
-                ": basicPrice=" + basicPrice +
-                ": percentageDiscount=" + percentageDiscount +
+                "Название =" + getName() +
+                ": стоимость со скидкой =" + getPrice() +
+                ": скидка =" + getPercentageDiscount() +
                 '}';
     }
 }
