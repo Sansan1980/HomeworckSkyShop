@@ -38,8 +38,8 @@ public class ProductBasket {
      *
      * @return и возвращает целое число - сумму товаров всей корзины.
      */
-    public  Integer summationTheTotalPraiceTheBasket() {
-        Integer priceResult = 0;
+    public  Double summationTheTotalPraiceTheBasket() {
+        Double priceResult = 0.0;
         for (int i = 0; i < repositoryProduct.length; i++) {
             if (repositoryProduct[i] != null) {
                 Product productResult = repositoryProduct[i];

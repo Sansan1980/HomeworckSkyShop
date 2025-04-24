@@ -2,6 +2,7 @@ package org.skypro.skyshop;
 
 import org.skypro.skyshop.basket.ProductBasket;
 import org.skypro.skyshop.product.Product;
+import org.skypro.skyshop.product.SimpleProduct;
 
 import java.util.Arrays;
 
@@ -19,12 +20,12 @@ public class App {
 
     public static void main(String[] args) {
 
-        productBasket.addProduct(new Product("robot", 10_000));
-        productBasket.addProduct(new Product("Boock", 22));
-        productBasket.addProduct(new Product("Компьютер", 1_000));
-        productBasket.addProduct(new Product("Машина", 1_000_000));
-        productBasket.addProduct(new Product("Еда", 1_000_000));
-        productBasket.addProduct(new Product("Еда", 1_000_000));
+        productBasket.addProduct(new SimpleProduct("robot", 10_000.0));
+        productBasket.addProduct(new SimpleProduct("Boock", 22.0));
+        productBasket.addProduct(new SimpleProduct("Компьютер", 1_000.0));
+        productBasket.addProduct(new SimpleProduct("Машина", 1_000_000.0));
+        productBasket.addProduct(new SimpleProduct("Еда", 1_000_000.0));
+        productBasket.addProduct(new SimpleProduct("Еда", 1_000_000.0));
         productBasket.summationTheTotalPraiceTheBasket();
         productBasket.printPraiceBascet();
         productBasket.checkingProductInBasketNamed("serg");
