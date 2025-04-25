@@ -2,7 +2,7 @@ package org.skypro.skyshop.product;
 
 import java.util.Objects;
 
-public class DiscountedProduct extends Product {
+public class DiscountedProduct extends Product implements Searchable {
     private Double basicPrice;
     private Double percentageDiscount;
 
@@ -19,6 +19,17 @@ public class DiscountedProduct extends Product {
     @Override
     public boolean isSpecial() {
         return false;
+    }
+    public String searchTerm() {
+        return null;
+    }
+
+    public String extractionTheType() {
+        return null;
+    }
+
+    public String getStringRepresentation() {
+        return null;
     }
 
     public Double getBasicPrice() {

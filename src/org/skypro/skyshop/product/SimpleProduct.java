@@ -2,7 +2,7 @@ package org.skypro.skyshop.product;
 
 import java.util.Objects;
 
-public class SimpleProduct extends Product {
+public class SimpleProduct extends Product implements Searchable {
     private Double price;
 
     public SimpleProduct(String name, Double price) {
@@ -22,6 +22,17 @@ public class SimpleProduct extends Product {
     @Override
     public  boolean isSpecial() {
         return true;
+    }
+    public String searchTerm() {
+        return null;
+    }
+
+    public String extractionTheType() {
+        return null;
+    }
+
+    public String getStringRepresentation() {
+        return null;
     }
 
     @Override

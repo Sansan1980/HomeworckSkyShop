@@ -2,7 +2,7 @@ package org.skypro.skyshop.product;
 
 import java.util.Objects;
 
-public class FixPriceProduct extends Product{
+public class FixPriceProduct extends Product implements Searchable{
     private String name;
     private static final Double Fix_Price_Product = 100.0;
 
@@ -16,6 +16,18 @@ public class FixPriceProduct extends Product{
 
     public boolean isSpecial() {
         return false;
+    }
+
+    public String searchTerm() {
+        return null;
+    }
+
+    public String extractionTheType() {
+        return null;
+    }
+
+    public String getStringRepresentation() {
+        return null;
     }
 
     public String getName() {
