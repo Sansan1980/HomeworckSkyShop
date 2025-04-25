@@ -20,17 +20,6 @@ public class DiscountedProduct extends Product implements Searchable {
     public boolean isSpecial() {
         return false;
     }
-    public String searchTerm() {
-        return null;
-    }
-
-    public String extractionTheType() {
-        return null;
-    }
-
-    public String getStringRepresentation() {
-        return null;
-    }
 
     public Double getBasicPrice() {
         return basicPrice;

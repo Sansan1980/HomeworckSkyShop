@@ -1,8 +1,10 @@
 package org.skypro.skyshop.article;
 
+import org.skypro.skyshop.product.Searchable;
+
 import java.util.Objects;
 
-public final class Article {
+public final class Article implements Searchable {
     private final String nameTheArticle;
     private final String textTheArticle;
 
@@ -18,6 +20,15 @@ public final class Article {
     public String getTextTheArticle() {
         return textTheArticle;
     }
+    public String searchTerm() {
+        return nameTheArticle + ": " + textTheArticle;
+    }
+
+    public String extractionTheType() {
+        return "ARTICLE";
+    }
+
+
 
     @Override
     public boolean equals(Object o) {

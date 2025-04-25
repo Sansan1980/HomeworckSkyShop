@@ -3,11 +3,9 @@ package org.skypro.skyshop.product;
 import java.util.Objects;
 
 public class FixPriceProduct extends Product implements Searchable{
-    private String name;
     private static final Double Fix_Price_Product = 100.0;
-
     public FixPriceProduct(String name) {
-        this.name = name;
+       super(name);
     }
 @Override
     public Double getPrice() {
@@ -18,25 +16,6 @@ public class FixPriceProduct extends Product implements Searchable{
         return false;
     }
 
-    public String searchTerm() {
-        return null;
-    }
-
-    public String extractionTheType() {
-        return null;
-    }
-
-    public String getStringRepresentation() {
-        return null;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -53,8 +32,8 @@ public class FixPriceProduct extends Product implements Searchable{
     @Override
     public String toString() {
         return "FixPriceProduct{" +
-                "Название продукта c фиксированной ценой ='" + name +
-                "Фиксированная цена =" + Fix_Price_Product +
+                "Название продукта c фиксированной ценой = '" + getName() +
+                ": Фиксированная цена = " + Fix_Price_Product +
                 '}';
 
     }
