@@ -1,4 +1,4 @@
-package org.skypro.skyshop.basket;
+package org.skypro.skyshop.service.basket;
 
 import org.skypro.skyshop.product.Product;
 
