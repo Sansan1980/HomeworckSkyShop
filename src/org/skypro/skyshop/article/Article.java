@@ -12,18 +12,19 @@ public final class Article implements Searchable {
         this.nameTheArticle = nameTheArticle;
         this.textTheArticle = textTheArticle;
     }
-
-    public String getNameTheArticle() {
+@Override
+    public String getName() {
         return nameTheArticle;
     }
 
     public String getTextTheArticle() {
         return textTheArticle;
     }
+    @Override
     public String searchTerm() {
         return nameTheArticle + ": " + textTheArticle;
     }
-
+    @Override
     public String extractionTheType() {
         return "ARTICLE";
     }
@@ -34,12 +35,12 @@ public final class Article implements Searchable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Article article)) return false;
-        return Objects.equals(getNameTheArticle(), article.getNameTheArticle()) && Objects.equals(getTextTheArticle(), article.getTextTheArticle());
+        return Objects.equals(getName(), article.getName()) && Objects.equals(getTextTheArticle(), article.getTextTheArticle());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getNameTheArticle(), getTextTheArticle());
+        return Objects.hash(getName(), getTextTheArticle());
     }
 
     @Override

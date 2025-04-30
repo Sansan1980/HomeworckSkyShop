@@ -1,6 +1,7 @@
 package org.skypro.skyshop.product;
 
 public interface Searchable {
+    public String getName();
     /**
      * Метод получения search term (термина поиска) — метод, который будет
      * возвращать текст, по которому мы будем искать.

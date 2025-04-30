@@ -9,10 +9,6 @@ public class ProductBasket {
     private int count = 0;
     private Product[] repositoryProduct = new Product[5];
 
-    public void setRepositoryProduct(Product[] repositoryProduct) {
-        this.repositoryProduct = repositoryProduct;
-    }
-
     public Product[] getRepositoryProduct() {
         return repositoryProduct;
     }
