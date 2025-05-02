@@ -4,13 +4,15 @@ import org.skypro.skyshop.product.Searchable;
 
 public class SearchEngine {
 
-    private Searchable[] arrayOfAllElements;
-
-    public SearchEngine(Searchable[] arrayOfAllElements) {
+    private static Searchable[] arrayOfAllElements;
+    public SearchEngine(Searchable [] arrayOfAllElements) {
         this.arrayOfAllElements = arrayOfAllElements;
     }
 
-    //Метод search— принимает в себя строку для поиска и возвращает 5
+    public static Searchable[] getArrayOfAllElements() {
+        return arrayOfAllElements;
+    }
+//Метод search— принимает в себя строку для поиска и возвращает 5
     // результатов поиска по массиву Searchable в виде массива из 5 элементов.
 
     /**
@@ -19,17 +21,18 @@ public class SearchEngine {
      * Инициализирует массив {@code Searchable[] resultArray = new Searchable[5]}
      * с максимум 5 элементов.
      * </p>
+     *
      * @param string входная строка данных
      * @return возвращает массив {@code Searchable[]} .
      */
     public Searchable[] search(String string) {
-        Searchable[] resultArray = new Searchable[5];
+        Searchable[] resultArray = new Searchable[10];
         if (string == null || string.isBlank()) {
             return null; // пробросить ошибку
         }
+        int count = 0;
         for (Searchable searchable : arrayOfAllElements) {
-            int count = 0;
-            if (searchable != null && searchable.searchTerm().contains(string)) {
+            if (searchable.searchTerm() != null && searchable.searchTerm().contains(string)) {
                 resultArray[count] = searchable;
                 count++;
                 if (count >= 5) {
@@ -44,7 +47,7 @@ public class SearchEngine {
     public void addNewItem(Searchable item) {
         Searchable[] localArray = new Searchable[arrayOfAllElements.length + 1];
         System.arraycopy(arrayOfAllElements, 0, localArray, 0, arrayOfAllElements.length);
-        localArray[arrayOfAllElements.length + 1] = item;
+        localArray[localArray.length-1] = item;
         arrayOfAllElements = localArray;
 
     }

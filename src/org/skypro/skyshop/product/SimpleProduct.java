@@ -16,24 +16,19 @@ public class SimpleProduct extends Product implements Searchable {
         return price;
     }
 
-    public void setPrice(Double price) {
-        this.price = price;
-    }
+
     @Override
     public  boolean isSpecial() {
         return true;
     }
     public String searchTerm() {
-        return null;
+        return getName();
     }
 
     public String extractionTheType() {
-        return null;
+        return "PRODUCT" ;
     }
 
-    public String getStringRepresentation() {
-        return null;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -52,7 +47,7 @@ public class SimpleProduct extends Product implements Searchable {
     public String toString() {
         return "SimpleProduct{" +
                 "name="+ getName() +
-                ": price=" + price +
+                ": price=" + getPrice() +
                 '}';
     }
 }

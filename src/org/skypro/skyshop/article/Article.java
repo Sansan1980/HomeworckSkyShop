@@ -5,6 +5,7 @@ import org.skypro.skyshop.product.Searchable;
 import java.util.Objects;
 
 public final class Article implements Searchable {
+    private static Searchable[] articleArray = new Searchable[5];
     private final String nameTheArticle;
     private final String textTheArticle;
 

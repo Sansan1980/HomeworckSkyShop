@@ -1,14 +1,15 @@
 package org.skypro.skyshop.service.basket;
 
 import org.skypro.skyshop.product.Product;
+import org.skypro.skyshop.product.Repository.Repository;
 
 import java.util.Arrays;
 
 
 public class ProductBasket {
+    private Repository repository = new Repository();
     private int count = 0;
-    private Product[] repositoryProduct = new Product[5];
-
+    private final Product[] repositoryProduct = new Product[5];
     public Product[] getRepositoryProduct() {
         return repositoryProduct;
     }
@@ -18,15 +19,19 @@ public class ProductBasket {
 
     /**
      * Метод добавления продукта в корзину:
-     * метод принимает  в себя продукт (параметр),проверяет по счетчику наличие свободных индексов
-     * массива и по этому индексу ложит элемент и ничего не возвращает.
+     * метод принимает  в себя продукт <br> (параметр {@link  Product product}),проверяет по счетчику наличие свободных индексов
+     * массива и по этому индексу кладёт элемент и ничего не возвращает.
      *
      * @param product параметр приходящий в метод.
      */
     public void addProduct(Product product) {
+        if (product == null) {
+            System.out.println(" product = null" ) ;//Пробросить ошибку.
+        }
         if (count >= 5) {
             System.out.println(" Невозможно добавить продукт");
         } else {
+           // repository.addRepository(product);//хочу переделать с отдельным классом репозитория для Product и  Artikle
             repositoryProduct[count] = product;
             count++;
             System.out.println("Добавлен новый продукт - " + product);
